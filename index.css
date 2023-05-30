@@ -1,0 +1,101 @@
+body::-webkit-scrollbar {
+  display: none;
+}
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+html,
+body {
+  width: 100%;
+  height: 100vh;
+  margin: 0 !important;
+  background-color: #DADADA;
+}
+html .container-portfolio,
+body .container-portfolio {
+  background-color: white;
+  width: 97%;
+  height: auto;
+  margin-top: 3vh;
+}
+html .container-portfolio > div,
+body .container-portfolio > div {
+  width: 100%;
+  height: 100vh;
+  border-bottom: 1px solid;
+  background-color: white;
+}
+html .container-portfolio .home,
+body .container-portfolio .home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+html .container-portfolio .home .home-header,
+body .container-portfolio .home .home-header {
+  display: flex;
+  align-items: center;
+  width: 95%;
+  height: 30vh;
+}
+html .container-portfolio .home .home-header .header-title,
+body .container-portfolio .home .home-header .header-title {
+  width: 70%;
+  height: 100%;
+}
+html .container-portfolio .home .home-header .header-title h1,
+body .container-portfolio .home .home-header .header-title h1,
+html .container-portfolio .home .home-header .header-title h2,
+body .container-portfolio .home .home-header .header-title h2 {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 0 !important;
+  font-family: monospace;
+}
+html .container-portfolio .home .home-header .header-title h1,
+body .container-portfolio .home .home-header .header-title h1 {
+  margin: 0 !important;
+}
+html .container-portfolio .home .home-header .header-info,
+body .container-portfolio .home .home-header .header-info {
+  width: 30%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+html .container-portfolio .home .home-header .header-info .info-content,
+body .container-portfolio .home .home-header .header-info .info-content {
+  height: auto;
+  border-left: 1px solid;
+}
+html .container-portfolio .home .home-header .header-info .info-content *,
+body .container-portfolio .home .home-header .header-info .info-content * {
+  padding-left: 10px;
+  font-weight: 800;
+}
+html .container-portfolio .home .home-header .header-info .info-content h3,
+body .container-portfolio .home .home-header .header-info .info-content h3,
+html .container-portfolio .home .home-header .header-info .info-content h4,
+body .container-portfolio .home .home-header .header-info .info-content h4,
+html .container-portfolio .home .home-header .header-info .info-content p,
+body .container-portfolio .home .home-header .header-info .info-content p {
+  margin: 0 !important;
+}
+html .container-portfolio .home .home-footer,
+body .container-portfolio .home .home-footer {
+  width: 95%;
+  height: 60vh;
+  display: flex;
+  align-items: end;
+}
+html .container-portfolio .home .home-footer .footer-content,
+body .container-portfolio .home .home-footer .footer-content {
+  width: 30%;
+  height: auto;
+}
+body {
+  display: flex;
+  justify-content: center;
+}

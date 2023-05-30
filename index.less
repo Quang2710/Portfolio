@@ -1,0 +1,107 @@
+@widthMain : 100%;
+@heightMain : 100vh;
+@heightItem : 100%;
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+html,
+body {
+    width: @widthMain;
+    height: @heightMain;
+    margin: 0 !important;
+    background-color: #DADADA;
+
+    .container-portfolio {
+        background-color: white;
+        width: 97%;
+        height: auto;
+        margin-top: 3vh;
+
+        >div {
+            width: @widthMain;
+            height: @heightMain;
+            border-bottom: 1px solid;
+            background-color: white;
+        }
+
+        .home {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .home-header {
+                display: flex;
+                align-items: center;
+                width: @widthMain - 5%;
+                height: @heightMain - 70vh;
+
+                .header-title {
+                    width: 70%;
+                    height: @heightItem;
+
+                    h1,
+                    h2 {
+                        font-size: 4rem;
+                        font-weight: 800;
+                        margin-bottom: 0 !important;
+                        font-family: monospace;
+                    }
+
+                    h1 {
+                        margin: 0 !important;
+                    }
+                }
+
+                .header-info {
+                    width: 30%;
+                    height: @heightItem - 20%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+
+                    .info-content {
+                        height: auto;
+                        border-left: 1px solid;
+
+                        * {
+                            padding-left: 10px;
+                            font-weight: 800;
+                        }
+
+                        h3, 
+                        h4,
+                        p {
+                            margin: 0 !important;
+                        }
+                    }
+
+                }
+            }
+
+            .home-footer {
+                width: @widthMain - 5%;
+                height: @heightMain - 40vh;
+                display: flex;
+                align-items: end;
+                .footer-content{
+                    width: 30%;
+                    height: auto;
+                }
+            }
+        }
+
+        .about {}
+    }
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
