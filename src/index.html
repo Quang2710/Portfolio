@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Vu Ngoc Quang · Frontend Developer</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Vu Ngoc Quang is a frontend developer in Hanoi building Angular applications for enterprise systems in aviation, manufacturing and the public sector.">
+  <meta name="author" content="Vu Ngoc Quang">
+  <meta name="theme-color" content="#f6f4ef">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Vu Ngoc Quang · Frontend Developer">
+  <meta property="og:description" content="Frontend developer in Hanoi. Angular, RxJS and Nx for enterprise systems.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <script>
+    // Apply the saved theme and language before first paint to avoid a flash.
+    (function () {
+      var root = document.documentElement;
+      var theme, lang;
+      try {
+        theme = localStorage.getItem('theme');
+        lang = localStorage.getItem('lang');
+      } catch (e) {}
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      if (lang !== 'en' && lang !== 'vi') {
+        lang = /^vi\b/i.test(navigator.language || '') ? 'vi' : 'en';
+      }
+      root.dataset.theme = theme;
+      root.lang = lang;
+    })();
+  </script>
+</head>
+<body>
+  <app-root></app-root>
+</body>
+</html>

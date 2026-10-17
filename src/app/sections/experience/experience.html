@@ -1,0 +1,76 @@
+<section class="section" id="experience">
+  <div class="container section-grid">
+    <h2 class="section-label">{{ t(ui.nav.experience) }}</h2>
+
+    <ol class="timeline">
+      @for (company of companies; track company.name + company.from) {
+        <li class="company" [class.is-current]="!company.to" appReveal>
+          <div class="company-head">
+            <h3 class="company-name">{{ company.name }}</h3>
+            <p class="period">{{ period(company.from, company.to) }}</p>
+          </div>
+
+          @if (company.role) {
+            <p class="company-role">{{ t(company.role) }}</p>
+          }
+
+          @if (company.stack.length) {
+            <ul class="stack" [attr.aria-label]="t(ui.experience.stack)">
+              @for (tech of company.stack; track tech) {
+                <li>{{ tech }}</li>
+              }
+            </ul>
+          }
+
+          @if (company.projects.length) {
+            <div class="projects">
+              @for (project of company.projects; track project.id) {
+                <article class="project" [class.is-open]="isOpen(project.id)">
+                  <h4>
+                    <button
+                      type="button"
+                      class="project-toggle"
+                      (click)="toggle(project.id)"
+                      [attr.aria-expanded]="isOpen(project.id)"
+                      [attr.aria-controls]="project.id"
+                    >
+                      <span class="project-name">{{ t(project.name) }}</span>
+                      <span class="plus" aria-hidden="true"></span>
+                    </button>
+                  </h4>
+
+                  <p class="meta">
+                    @if (project.client) {
+                      <span>{{ t(project.client) }}</span>
+                    }
+                    <span>{{ t(project.role) }}</span>
+                    <span>{{ t(ui.experience.team(project.team)) }}</span>
+                    @if (!spansWholeTenure(company, project)) {
+                      <span>{{ period(project.from, project.to) }}</span>
+                    }
+                  </p>
+
+                  <p class="summary">{{ t(project.summary) }}</p>
+
+                  <div
+                    class="details"
+                    [id]="project.id"
+                    [attr.inert]="isOpen(project.id) ? null : ''"
+                  >
+                    <div class="details-inner">
+                      <ul class="points">
+                        @for (point of project.points; track $index) {
+                          <li>{{ t(point) }}</li>
+                        }
+                      </ul>
+                    </div>
+                  </div>
+                </article>
+              }
+            </div>
+          }
+        </li>
+      }
+    </ol>
+  </div>
+</section>

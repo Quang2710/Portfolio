@@ -1,0 +1,51 @@
+<section class="section" id="contact">
+  <div class="container section-grid">
+    <h2 class="section-label">{{ t(ui.nav.contact) }}</h2>
+
+    <div>
+      <p class="lead" appReveal>{{ t(ui.contact.lead) }}</p>
+      <p class="sub" appReveal="80">{{ t(ui.contact.sub) }}</p>
+
+      <div class="mail" appReveal="160">
+        <a class="mail-link" [href]="'mailto:' + profile.email">{{ profile.email }}</a>
+        <button
+          type="button"
+          class="copy"
+          [class.is-done]="copied()"
+          (click)="copyEmail()"
+          [attr.aria-label]="t(ui.contact.copyLabel)"
+        >
+          <span aria-live="polite">{{ t(copied() ? ui.contact.copied : ui.contact.copy) }}</span>
+        </button>
+      </div>
+
+      <dl class="channels" appReveal="240">
+        <div>
+          <dt>{{ t(ui.contact.phone) }}</dt>
+          <dd><a class="link" [href]="profile.phoneHref">{{ profile.phone }}</a></dd>
+        </div>
+        <div>
+          <dt>GitHub</dt>
+          <dd>
+            <a class="link" [href]="profile.github" target="_blank" rel="noopener">{{
+              profile.githubLabel
+            }}</a>
+          </dd>
+        </div>
+        <div>
+          <dt>{{ t(ui.contact.location) }}</dt>
+          <dd>{{ t(profile.location) }}</dd>
+        </div>
+        <div>
+          <dt>{{ t(ui.contact.cv) }}</dt>
+          <dd>
+            <a class="link cv" [href]="profile.cv" download>
+              {{ t(ui.contact.cvLink) }}
+              <app-icon name="download" [size]="14" />
+            </a>
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>

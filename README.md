@@ -1,0 +1,47 @@
+# vnquang · Portfolio
+
+Trang giới thiệu cá nhân của Vũ Ngọc Quang, viết bằng Angular 21 (standalone components, signals, zoneless).
+
+## Chạy dự án
+
+```bash
+npm install
+npm start          # http://localhost:4200
+npm run build      # build production vào dist/portfolio/browser
+```
+
+Yêu cầu Node `^20.19`, `^22.12` hoặc `>=24`.
+
+## Sửa nội dung
+
+Toàn bộ nội dung nằm trong `src/app/data/`, không cần động vào component:
+
+| File | Nội dung |
+| --- | --- |
+| `content.ts` | Thông tin cá nhân, kinh nghiệm, dự án cá nhân, kỹ năng |
+| `ui.ts` | Các đoạn chữ trên giao diện (tiêu đề, nút, đoạn giới thiệu) |
+
+Mỗi đoạn chữ có hai bản `en` và `vi`. Số năm kinh nghiệm hiển thị trên trang lấy từ `experienceYears`.
+
+File CV để tải về là `public/vu-ngoc-quang-cv.pdf`. Khi cập nhật CV chỉ cần thay file này.
+
+## Cấu trúc
+
+```
+src/app/
+  core/       I18n (EN/VI), theme sáng/tối, view transition
+  data/       nội dung và định dạng ngày tháng
+  sections/   header, hero, about, experience, projects, skills, contact, footer
+  shared/     directive hiệu ứng xuất hiện khi cuộn, icon
+src/styles.scss   màu sắc, typography, layout dùng chung
+```
+
+## Deploy
+
+Sau khi `npm run build`, upload thư mục `dist/portfolio/browser` lên bất kỳ static host nào (Vercel, Netlify, Cloudflare Pages, GitHub Pages).
+
+Với GitHub Pages dạng `username.github.io/repo`, build với base href tương ứng:
+
+```bash
+npx ng build --base-href /repo/
+```

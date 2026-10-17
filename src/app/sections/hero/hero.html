@@ -1,0 +1,55 @@
+<section class="hero container" id="top">
+  <p class="eyebrow" appReveal>{{ t(ui.hero.eyebrow) }}</p>
+
+  <h1 class="name">
+    <span class="sr-only">{{ t(profile.name) }}</span>
+    @for (line of profile.nameLines; track $index) {
+      <span class="name-line" aria-hidden="true">
+        <span [style.--i]="$index">{{ t(line) }}</span>
+      </span>
+    }
+  </h1>
+
+  <div class="hero-body">
+    <p class="lede" appReveal="300">{{ t(ui.hero.lede) }}</p>
+
+    <div class="actions" appReveal="400">
+      <a class="btn btn-primary" href="#contact">
+        {{ t(ui.hero.contact) }}
+        <app-icon name="arrow-right" />
+      </a>
+      <a class="btn btn-ghost" [href]="profile.cv" download>
+        {{ t(ui.hero.cv) }}
+        <app-icon name="download" />
+      </a>
+    </div>
+  </div>
+
+  <dl class="facts" appReveal="500">
+    @if (current; as company) {
+      <div>
+        <dt>{{ t(ui.hero.now) }}</dt>
+        <dd>
+          @if (currentRole) {
+            {{ t(currentRole) }}
+          }
+          <span class="employer">{{ company.name }}</span>
+        </dd>
+      </div>
+    }
+    <div>
+      <dt>{{ t(ui.hero.experience) }}</dt>
+      <dd>{{ t(ui.years(years)) }}</dd>
+    </div>
+    <div>
+      <dt>{{ t(ui.hero.basedIn) }}</dt>
+      <dd>{{ t(profile.location) }}</dd>
+    </div>
+    <div>
+      <dt>GitHub</dt>
+      <dd>
+        <a class="link" [href]="profile.github" target="_blank" rel="noopener">Quang2710</a>
+      </dd>
+    </div>
+  </dl>
+</section>

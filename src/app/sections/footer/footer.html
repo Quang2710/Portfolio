@@ -1,0 +1,14 @@
+<footer class="footer">
+  <div class="container footer-inner">
+    <p>© {{ year }} {{ t(profile.name) }}</p>
+    <p>
+      {{ t(ui.footer.city) }} <time>{{ time() }}</time> (GMT+7)
+      <span class="sep" aria-hidden="true">·</span>
+      {{ t(ui.footer.builtWith) }}
+    </p>
+    <a class="top link" href="#top">
+      {{ t(ui.footer.top) }}
+      <app-icon name="arrow-up" [size]="14" />
+    </a>
+  </div>
+</footer>

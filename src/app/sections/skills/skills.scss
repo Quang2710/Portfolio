@@ -1,0 +1,36 @@
+:host {
+  display: block;
+}
+
+.groups {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.group {
+  h3 {
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--ink);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  li {
+    padding-block: 0.65rem;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.9375rem;
+  }
+
+  .is-core {
+    font-weight: 500;
+    color: var(--ink);
+  }
+}
+
+@media (min-width: 700px) {
+  .groups {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+  }
+}

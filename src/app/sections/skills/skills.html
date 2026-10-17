@@ -1,0 +1,18 @@
+<section class="section" id="skills">
+  <div class="container section-grid">
+    <h2 class="section-label">{{ t(ui.nav.skills) }}</h2>
+
+    <div class="groups">
+      @for (group of groups; track $index; let i = $index) {
+        <div class="group" [appReveal]="i * 80">
+          <h3>{{ t(group.title) }}</h3>
+          <ul>
+            @for (skill of group.items; track $index) {
+              <li [class.is-core]="skill.core">{{ label(skill) }}</li>
+            }
+          </ul>
+        </div>
+      }
+    </div>
+  </div>
+</section>

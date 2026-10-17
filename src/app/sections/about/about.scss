@@ -1,0 +1,40 @@
+:host {
+  display: block;
+}
+
+.lead {
+  max-width: 40ch;
+  font-size: clamp(1.25rem, 2.3vw, 1.75rem);
+  line-height: 1.45;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+
+.body {
+  max-width: 62ch;
+  margin-top: 1.5rem;
+}
+
+.facts {
+  display: grid;
+  gap: 1.25rem 2.5rem;
+  margin-top: clamp(2rem, 4vw, 3rem);
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+
+  dt {
+    font-size: 0.8125rem;
+    color: var(--muted);
+  }
+
+  dd {
+    margin: 0.2rem 0 0;
+    color: var(--ink);
+  }
+}
+
+@media (min-width: 640px) {
+  .facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

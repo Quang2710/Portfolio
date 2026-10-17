@@ -1,0 +1,32 @@
+<section class="section" id="projects">
+  <div class="container section-grid">
+    <h2 class="section-label">{{ t(ui.nav.projects) }}</h2>
+
+    <div>
+      <p class="intro" appReveal>{{ t(ui.projects.intro) }}</p>
+
+      <ul class="list">
+        @for (project of projects; track project.url; let i = $index) {
+          <li [appReveal]="i * 80">
+            <a class="row" [href]="project.url" target="_blank" rel="noopener">
+              <span class="head">
+                <span class="name">{{ project.name }}</span>
+                <span class="tags">{{ project.stack.join(' · ') }}</span>
+              </span>
+              <span class="desc">{{ t(project.description) }}</span>
+              <span class="go">
+                <app-icon name="arrow-up-right" />
+              </span>
+              <span class="sr-only">({{ t(ui.projects.newTab) }})</span>
+            </a>
+          </li>
+        }
+      </ul>
+
+      <a class="more link" [href]="profile.github" target="_blank" rel="noopener" appReveal>
+        {{ t(ui.projects.more) }}
+        <app-icon name="arrow-up-right" [size]="14" />
+      </a>
+    </div>
+  </div>
+</section>
