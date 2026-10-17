@@ -38,10 +38,4 @@ src/styles.scss   màu sắc, typography, layout dùng chung
 
 ## Deploy
 
-Sau khi `npm run build`, upload thư mục `dist/portfolio/browser` lên bất kỳ static host nào (Vercel, Netlify, Cloudflare Pages, GitHub Pages).
-
-Với GitHub Pages dạng `username.github.io/repo`, build với base href tương ứng:
-
-```bash
-npx ng build --base-href /repo/
-```
+Dự án deploy trên Vercel, cấu hình trong `vercel.json`. Mỗi lần push lên nhánh `main`, Vercel tự build và cập nhật trang.
