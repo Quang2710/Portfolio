@@ -38,4 +38,7 @@ src/styles.scss   màu sắc, typography, layout dùng chung
 
 ## Deploy
 
-Dự án deploy trên Vercel, cấu hình trong `vercel.json`. Mỗi lần push lên nhánh `main`, Vercel tự build và cập nhật trang.
+Mỗi lần push lên nhánh `main`, trang tự build và cập nhật ở hai nơi:
+
+- GitHub Pages: https://quang2710.github.io/Portfolio/ (workflow `.github/workflows/deploy.yml`, yêu cầu repo public và Settings → Pages → Source là **GitHub Actions**)
+- Vercel: cấu hình trong `vercel.json`
